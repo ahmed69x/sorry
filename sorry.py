@@ -20,7 +20,7 @@ SMTP_PASS = get_secret("smtp_pass", "")
 
 # Emails you provided
 OWNER_EMAIL = "ahmed.hasssan766@gmail.com"
-GF_EMAIL = "ayeshaqayyumm@gmail.com"
+GF_EMAIL = "fifi.ali.abdullah@gmail.com"
 
 # Credentials
 OWNER_USERNAME = "aq"
@@ -347,4 +347,5 @@ if st.button("🚪 Log out"):
         if k in st.session_state:
             del st.session_state[k]
     st.rerun()
+
 
