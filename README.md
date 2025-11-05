@@ -1,0 +1,2 @@
+streamlit
+email-validator
