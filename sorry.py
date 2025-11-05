@@ -23,10 +23,10 @@ OWNER_EMAIL = "ahmed.hasssan766@gmail.com"
 GF_EMAIL = "fifi.ali.abdullah@gmail.com"
 
 # Credentials
-OWNER_USERNAME = "aq"
+_USERNAME = "aq"
 GF_USERNAME = "ah"
 OWNER_PASSWORD = "ayeshiqt"
-GF_PASSWORD = "ayeshiqt"
+GF_PASSWORD = "ayeshiq"
 
 LOG_FILE = "annoy_log.csv"
 
@@ -314,7 +314,7 @@ if st.session_state.slide_index == len(slides) - 1:
             )
             success, msg = send_email(subject, body, to_email=owner_email_target, cc_email=gf_email_target)
             if success:
-                st.success("Owner has been notified. Thank you — that helps.")
+                st.success("Ahmed has been notified and apologies for him being dumb sometimes. Thank you.")
             else:
                 # keep behavior clear: log happens regardless; email may need SMTP
                 st.error(f"Could not send email: {msg}  (Email requires SMTP configuration.)")
@@ -347,5 +347,6 @@ if st.button("🚪 Log out"):
         if k in st.session_state:
             del st.session_state[k]
     st.rerun()
+
 
 
