@@ -191,15 +191,15 @@ def do_login(username, password):
     return False
 
 if not st.session_state.logged_in:
-    st.title("💞 Welcome to the Apology App")
-    st.write("A heartfelt place — only for the two of us 💖")
+    st.title("Hi Ayeshi Please log in")
+    st.write("A place you can come to if i'm about to be annoying")
     with st.form("login_form"):
         username = st.selectbox("Login as", options=[OWNER_USERNAME, GF_USERNAME])
         pwd = st.text_input("Password", type="password")
         submitted = st.form_submit_button("Enter ❤️")
     if submitted:
         if do_login(username, pwd):
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Wrong username or password 💔")
     st.stop()
@@ -266,14 +266,14 @@ with col1:
     if st.session_state.slide_index > 0:
         if st.button("💖 Prev"):
             st.session_state.slide_index -= 1
-            st.experimental_rerun()
+            st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 with col3:
     st.markdown('<div class="small-nav">', unsafe_allow_html=True)
     if st.session_state.slide_index < len(slides) - 1:
         if st.button("💞 Next"):
             st.session_state.slide_index += 1
-            st.experimental_rerun()
+            st.rerun()
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ---------------- FINAL SLIDE ACTION (Big Red Button + feedback box) ----------------
@@ -346,4 +346,5 @@ if st.button("🚪 Log out"):
     for k in ["logged_in", "user", "slide_index"]:
         if k in st.session_state:
             del st.session_state[k]
-    st.experimental_rerun()
+    st.rerun()
+
